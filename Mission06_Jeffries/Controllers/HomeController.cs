@@ -40,7 +40,7 @@ namespace Mission06_Jeffries.Controllers
             {
                 _context.Movies.Add(movie);
                 _context.SaveChanges();
-                return RedirectToAction("MovieList"); // Redirect after saving
+                return View("Confirmation"); // Redirect after saving
             }
 
             return View("Confirmation");
