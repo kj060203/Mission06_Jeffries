@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Mission06_Jeffries.Models;
 
@@ -10,9 +11,11 @@ using Mission06_Jeffries.Models;
 namespace Mission06_Jeffries.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250221142403_FixCategoryRelationship")]
+    partial class FixCategoryRelationship
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.13");
@@ -83,7 +86,7 @@ namespace Mission06_Jeffries.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Mission06_Jeffries.Models.Movie", b =>
+            modelBuilder.Entity("Mission06_Jeffries.Models.Movies", b =>
                 {
                     b.Property<int>("MovieId")
                         .ValueGeneratedOnAdd()
@@ -125,7 +128,7 @@ namespace Mission06_Jeffries.Migrations
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("Mission06_Jeffries.Models.Movie", b =>
+            modelBuilder.Entity("Mission06_Jeffries.Models.Movies", b =>
                 {
                     b.HasOne("Mission06_Jeffries.Models.Category", "Category")
                         .WithMany()
