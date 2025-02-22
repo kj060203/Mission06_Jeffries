@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 namespace Mission06_Jeffries.Models
 {
+    // What is needed in the Movies table. Specifies what is required and what has other requirements
     public class Movie
     {
     [Key]
@@ -13,7 +14,7 @@ namespace Mission06_Jeffries.Models
     public Category? Category { get; set; }
 
     [Required]
-    public string Title { get; set; } //= string.Empty;
+    public string Title { get; set; } 
 
     [Required]
     [Range(1888,int.MaxValue)]

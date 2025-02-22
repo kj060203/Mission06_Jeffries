@@ -2,16 +2,23 @@
 
 <h2>Add a New Movie</h2>
 
+<!-- Form to add/edit movie -->
+
 <form method="post">
 
-    <input type = "hidden" asp-for="MovieId" />
+    <input type = "hidden" asp-for="MovieId" /> 
     <br />
 
+    
+    <!-- Title -->
     <div class="form-group">
         <label asp-for="Title"></label>
         <input asp-for="Title" class="form-control" required />
     </div>
 
+
+    
+    <!-- Dropdown for Category ... connects to category.cs -->
     <div class="form-group">
         <label asp-for="CategoryID">Category</label>
         <select asp-for="CategoryID">
@@ -23,11 +30,15 @@
         </select>
     </div>
 
+
+    <!-- Year, limit past 1888 -->
     <div class="form-group">
         <label asp-for="Year"></label>
         <input asp-for="Year" class="form-control" type="number" min="1888" max="2025" required />
     </div>
 
+
+    <!-- Director -->
     <div class="form-group">
         <label asp-for="Director"></label>
         <input asp-for="Director" class="form-control" />
@@ -54,16 +65,20 @@
         </select>
     </div>
 
+    <!-- Lent to-->
     <div class="form-group">
         <label asp-for="LentTo"></label>
         <input asp-for="LentTo" class="form-control" />
     </div>
 
+    <!-- Notes, limit to 25-->
     <div class="form-group">
         <label asp-for="Notes"></label>
         <input asp-for="Notes" class="form-control" maxlength="25" />
     </div>
 
+
+    <!-- Copied to plex-->
     <div class="form-group">
         <label asp-for="CopiedToPlex">Copied to Plex</label>
         <select asp-for="CopiedToPlex" class="form-control" required>

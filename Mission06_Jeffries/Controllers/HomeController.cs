@@ -45,6 +45,7 @@ namespace Mission06_Jeffries.Controllers
             return View("Confirmation", movie); // Redirect after saving
         }
 
+        // GET: MovieList
         public IActionResult MovieList()
         {
             //Linq Query
@@ -55,6 +56,8 @@ namespace Mission06_Jeffries.Controllers
 
             return View(applications);
         }
+
+        // Get and post for editing a movie
 
         [HttpGet]
         public IActionResult Edit(int id)
@@ -76,6 +79,8 @@ namespace Mission06_Jeffries.Controllers
             _context.SaveChanges();
             return RedirectToAction("MovieList");
         }
+
+        // Get and Post for deleting a movie
 
         [HttpGet]
         public IActionResult Delete(int id)

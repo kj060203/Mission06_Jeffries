@@ -8,6 +8,7 @@ namespace Mission06_Jeffries.Models
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
+        // Connect to both tables in database and fill category with dummy data
 
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Category> Categories { get; set; }
